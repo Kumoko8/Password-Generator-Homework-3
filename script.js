@@ -1,23 +1,24 @@
 
-//Defining variables for arrays
+//Defining variables for arrays and button
+
+var generateBtn = document.querySelector("#generate");
 var numbers = Array.from(Array(10).keys());
 var uppercaseLetters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var specialCharacters = ["$", "!", "@", "#", "%", "&", "*", "(", ")", "+", "-", "_", "<", ">", "~", "=", "/",","];
 
-//Make letters 2 separate arrays
-
 
 function getUserOptions() {
-  var passwordLength = parseInt(prompt ("What is the length of your password? (Must be between 10 and 128 characters)"));
+  
+  var passwordLength = parseInt(prompt ("What is the length of your password? (Must be between 8 and 128 characters)"));
 
   //if statements for user inputs
-  if (passwordLength < 10 || passwordLength > 128) {
-    alert ("Invalid entry. Please choose a number between 10 and 128.")
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert ("Invalid entry. Please choose a number between 8 and 128.")
     return null;
   }
   if (isNaN(passwordLength)){
-    alert ("Invalid entry. Please choose a number between 10 and 128.")
+    alert ("Invalid entry. Please choose a number between 8 and 128.")
     return null; 
   }
  //Confirm for each type of character
@@ -40,7 +41,7 @@ function getUserOptions() {
 function generatePassword() {
   var options = getUserOptions();
   var optionsArray = [];
-  var myPassword = " ";
+  
 
 //make if statement for each type of character that they want
   if (options.hasNumbers) {
@@ -56,25 +57,26 @@ function generatePassword() {
     optionsArray = optionsArray.concat(specialCharacters);
   }
   //use for loop to randomize the optionsArray
-  for (var i = 0; i < options; i++) {
+  for (var i = 0; i < optionsArray.length; i++) {
     optionsArray[Math.floor(Math.random()* optionsArray.length)];
+    var myPassword = " ";
     return myPassword;
   }
   //return my password\
 }
 
 function writePassword() {
-  var myPassword = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = myPassword;
+  passwordText.value = password;
   //from starter code
-  return myPassword;
+  return password;
 }
 
 
   // Add event listener to button
-  var generateBtn = document.querySelector("#generate");
+  
   generateBtn.addEventListener("click", writePassword);
 
   //Use var # = document.getElementById('#') to select the space for the final password to go in
