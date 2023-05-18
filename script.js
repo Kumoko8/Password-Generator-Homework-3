@@ -9,7 +9,7 @@ var specialCharacters = ["$", "!", "@", "#", "%", "&", "*", "(", ")", "+", "-", 
 
 
 function getUserOptions() {
-  
+
   var passwordLength = parseInt(prompt ("What is the length of your password? (Must be between 8 and 128 characters)"));
 
   //if statements for user inputs
@@ -21,6 +21,7 @@ function getUserOptions() {
     alert ("Invalid entry. Please choose a number between 8 and 128.")
     return null; 
   }
+  
  //Confirm for each type of character
   var includeNumbersInput = confirm ("Click to confirm if you want to include numbers.");
   var includeUppercaseInput = confirm ("Click to confirm if you want to include uppercase letters.");
@@ -41,6 +42,7 @@ function getUserOptions() {
 function generatePassword() {
   var options = getUserOptions();
   var optionsArray = [];
+  var myPassword = "";
   
 
 //make if statement for each type of character that they want
@@ -59,7 +61,7 @@ function generatePassword() {
   //use for loop to randomize the optionsArray
   for (var i = 0; i < optionsArray.length; i++) {
     optionsArray[Math.floor(Math.random()* optionsArray.length)];
-    var myPassword = " ";
+   
     return myPassword;
   }
   //return my password\
