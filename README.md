@@ -8,11 +8,14 @@ Use this webpage to generate a random password to use for a secure website! Howe
 
 # Screenshots
 
+![image](https://github.com/Kumoko8/Password-Generator-Homework-3/assets/131223690/d1e30141-687b-4e77-a6b1-d0704b538d5f)
+![image](https://github.com/Kumoko8/Password-Generator-Homework-3/assets/131223690/a5018d94-c4fb-4775-a003-222f99459098)
+![image](https://github.com/Kumoko8/Password-Generator-Homework-3/assets/131223690/5db00d59-ff6e-43ab-a488-904d2eae519c)
 
 
 
 # Link to Live Page
-
+https://kumoko8.github.io/Password-Generator-Homework-3/
 
 # License
 
